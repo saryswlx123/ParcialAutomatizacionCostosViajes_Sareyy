@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\winpn\\source\\repos\\PARCIAL_FINAL\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B904FE55-7E74-4F3F-AC77-5F0A49DE96B1}|PARCIAL_FINAL\\PARCIAL_FINAL.vcxproj|C:\\Users\\winpn\\source\\repos\\PARCIAL_FINAL\\PARCIAL_FINAL\\PARCIAL_FINAL.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B904FE55-7E74-4F3F-AC77-5F0A49DE96B1}|PARCIAL_FINAL\\PARCIAL_FINAL.vcxproj|solutionrelative:PARCIAL_FINAL\\PARCIAL_FINAL.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PARCIAL_FINAL.cpp",
+              "DocumentMoniker": "C:\\Users\\winpn\\source\\repos\\PARCIAL_FINAL\\PARCIAL_FINAL\\PARCIAL_FINAL.cpp",
+              "RelativeDocumentMoniker": "PARCIAL_FINAL\\PARCIAL_FINAL.cpp",
+              "ToolTip": "C:\\Users\\winpn\\source\\repos\\PARCIAL_FINAL\\PARCIAL_FINAL\\PARCIAL_FINAL.cpp",
+              "RelativeToolTip": "PARCIAL_FINAL\\PARCIAL_FINAL.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-02T00:21:35.819Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

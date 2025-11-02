@@ -1,14 +1,28 @@
-// PARCIAL AVANCE SAREY NALIETH SALGUERO LANDINEZ
+// PARCIAL FINAL SAREY NALIETH SALGUERO LANDINEZ
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 using namespace std;
 
 //FUNCIONES
 
+// Funcion para validar datos de entrada (distancia y costo)
+double validarDato(string mensaje) {
+    double valor;
+    do {
+        cout << mensaje;
+        cin >> valor;
+        if (valor < 0) {
+            cout << "Error: el valor no puede ser negativo. Intente de nuevo." << endl;
+        }
+	} while (valor < 0);
+	return valor;
+}
+
 // Funcion para calcular total ganado por conductor
-float calcularTotal(float distancia[], float costo[], int viajes) {
-    float total = 0;
+double calcularTotal(double distancia[], double costo[], int viajes) {
+    double total = 0;
     for (int i = 0; i < viajes; i++) {
         total += distancia[i] * costo[i];
     }
@@ -16,8 +30,8 @@ float calcularTotal(float distancia[], float costo[], int viajes) {
 }
 
 // Funcion pra calcular el promedio de distancia por conductor
-float promedioDistancia(float distancia[], int viajes) {
-    float suma = 0;
+double promedioDistancia(double distancia[], int viajes) {
+    double suma = 0;
     for (int i = 0; i < viajes; i++) {
         suma += distancia[i];
     }
@@ -31,9 +45,11 @@ float promedioDistancia(float distancia[], int viajes) {
 
 
 int main() {
-    int i, j, conductores, viajes;
+    int conductores, viajes;
     string nombres[10], mejorConductor;
-    float totalGanado[10], promedioDist[10], distancia[10], costo[10], mayorIngreso = 0;
+    double totalGanado[10], promedioDist[10], distancia[10], costo[10], mayorIngreso = 0;
+
+    cout << fixed << setprecision(2);
 
     // Pedir el número de conductores
     do {
@@ -46,7 +62,6 @@ int main() {
     } while (conductores <= 0 || conductores > 10);
 
     // Bucle anidado para los datos (nombre, viajes, distancia y costo) de cada conductor  
-
     for (int i = 0; i < conductores; i++) {
         cout << endl << "===== CONDUCTOR #" << i + 1 << " =====" << endl;
         cout << "Nombre: ";
@@ -54,7 +69,7 @@ int main() {
 
         // Pedir el número de viajes realizados y validar que sea negitivo ni mayor de 10 
 
-        do { //En caso de que sea un nu,m invalido, pedir de nuevo el dato
+        do { //En caso de que sea un num invalido, pedir de nuevo el dato
             cout << "Ingrese el número de viajes realizados: ";
             cin >> viajes;
 
@@ -66,22 +81,8 @@ int main() {
         // Bucle para pedir la distancia y el costo
         for (int j = 0; j < viajes; j++) {
             cout << endl << "--- VIAJE #" << j + 1 << " ---" << endl;
-
-            do {  // Validar que la distancia no sea negativa o sino pedirla de nuevo
-                cout << "Distancia (km): ";
-                cin >> distancia[j];
-                if (distancia[j] < 0) {
-                    cout << "La distancia no puede ser negativa!!" << endl;
-                }
-            } while (distancia[j] < 0);
-
-            do { // Validar que el costo no sea negativo o sino pedirlo de nuevo
-                cout << "Costo por km ($): ";
-                cin >> costo[j];
-                if (costo[j] < 0) {
-                    cout << "El costo no puede ser negativo!!" << endl;
-                }
-            } while (costo[j] < 0);
+            distancia[j] = validarDato("Distancia (km): ");
+            costo[j] = validarDato("Costo por km ($): ");
         }
 
         // Funciones en el maain para luego ponerla en la salida
@@ -94,13 +95,20 @@ int main() {
             mejorConductor = nombres[i];
         }
     }
-    // (Falta terminar)
-    cout << "========= RESUMEN DE VIAJES =========" << endl;
-    cout << "Conductores:" << endl;
-    cout << "Total ganado ($) : " << endl;
-    cout << "Promedio distancia (km) : " << endl;
-    cout << "El contador con mayor ingreso fue: ";
+
+    // ======= RESUMEN FINAL =======
+
+    cout << endl << "================== RESUMEN DE VIAJES ==================" << endl;
+    //Bucle para recorrer los conductores y mostrar su resumen
+	for (int i = 0; i < conductores; i++) { 
+        cout << endl << "Conductor: " << nombres[i] << endl;
+        cout << "Total ganado ($): " << totalGanado[i] << endl;
+        cout << "Promedio de distancia (km): " << promedioDist[i] << endl;
+    }
+
+    cout << "==========================================================================" << endl;
+    cout << "El conductor con mayor ingreso fue: " << mejorConductor << " con $" << mayorIngreso << endl;
+    cout << "==========================================================================" << endl;
 
     return 0;
-
 }
